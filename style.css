@@ -1,0 +1,951 @@
+/*
+  FreshCare Laundry Services website
+  This one file has the styles for all our 3 pages
+  (index.html, services.html and contacts.html)
+  Group assignment - Web Systems
+*/
+
+/* basic setup for the whole site */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: #142c3d;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1, h2, h3 {
+  color: #052b4a;
+  line-height: 1.14;
+}
+
+/* the big heading on the home page */
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* section headings */
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+/* this keeps everything lined up in the middle of the page */
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+/* the small teal text above the headings */
+.eyebrow {
+  color: #087f8c;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ============ header and navigation ============ */
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid #d8e5ea;
+  background-color: #ffffff;
+}
+
+.nav-wrap {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+/* the logo + name on the left */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #073b66;
+  font-size: 1.04rem;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.brand img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand small {
+  display: block;
+  margin-top: 5px;
+  color: #087f8c;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* makes the page you are on look different */
+.nav-links a {
+  display: block;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #5c6f7c;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a.active {
+  color: #073b66;
+  background-color: #e8f7fb;
+}
+
+/* ============ buttons ============ */
+
+.button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 0;
+  border-radius: 8px;
+  padding: 13px 22px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(5, 43, 74, 0.16);
+}
+
+.button-primary {
+  color: #ffffff;
+  background-color: #073b66;
+}
+
+.button-primary:hover {
+  background-color: #165d8d;
+}
+
+/* white button used on the teal strip */
+.button-light {
+  color: #073b66;
+  background-color: #ffffff;
+}
+
+.button-accent {
+  color: #052b4a;
+  background-color: #14b8a6;
+}
+
+/* the plain underlined link next to the button */
+.text-link {
+  color: #073b66;
+  font-weight: 800;
+  border-bottom: 2px solid #14b8a6;
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+/* ============ home page hero ============ */
+
+.hero {
+  overflow: hidden;
+  padding: 72px 0 84px;
+  background: linear-gradient(115deg, #e8f7fb 0%, #ffffff 65%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  align-items: center;
+  gap: 70px;
+}
+
+/* makes "Fresh Life." teal */
+.hero h1 span {
+  color: #087f8c;
+}
+
+.hero-copy > p:not(.eyebrow) {
+  max-width: 600px;
+  color: #5c6f7c;
+  font-size: 1.12rem;
+}
+
+.hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 0;
+  padding: 0;
+  color: #165d8d;
+  font-size: 0.9rem;
+  font-weight: 700;
+  list-style: none;
+}
+
+/* the little tick before each point */
+.hero-points li::before {
+  content: "\2713";
+  margin-right: 7px;
+  color: #14b8a6;
+}
+
+.hero-image {
+  position: relative;
+}
+
+/* the round corners on the picture */
+.hero-image img {
+  width: 100%;
+  min-height: 500px;
+  border-radius: 160px 18px 160px 18px;
+  box-shadow: 0 18px 45px rgba(5, 43, 74, 0.1);
+  object-fit: cover;
+}
+
+/* the round "Fresh Every time" circle */
+.hero-badge {
+  position: absolute;
+  right: -18px;
+  bottom: 40px;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #087f8c;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(5, 43, 74, 0.1);
+}
+
+.hero-badge strong {
+  font-family: Georgia, serif;
+  font-size: 1.45rem;
+}
+
+.hero-badge span {
+  font-size: 0.76rem;
+}
+
+/* ============ about and benefits ============ */
+
+.two-column {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 90px;
+  align-items: start;
+}
+
+.about-copy {
+  padding-top: 12px;
+  color: #5c6f7c;
+  font-size: 1.05rem;
+}
+
+/* light blue background section */
+.section-tint {
+  background-color: #e8f7fb;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 45px;
+}
+
+.section-heading.centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section-heading > p:last-child {
+  color: #5c6f7c;
+}
+
+/* the 5 small boxes on the home page */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.benefit {
+  min-height: 250px;
+  padding: 28px 22px;
+  border: 1px solid rgba(8, 127, 140, 0.15);
+  border-radius: 18px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 25px rgba(5, 43, 74, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.benefit:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(5, 43, 74, 0.1);
+}
+
+/* the round icon at the top of each box */
+.benefit .icon,
+.service-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 38px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #087f8c;
+  font-size: 1.4rem;
+}
+
+.benefit p {
+  margin-bottom: 0;
+  color: #5c6f7c;
+  font-size: 0.93rem;
+}
+
+/* ============ our leadership ============ */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.team-card {
+  overflow: hidden;
+  border: 1px solid #d8e5ea;
+  border-radius: 18px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(5, 43, 74, 0.07);
+}
+
+.team-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-info {
+  padding: 25px;
+}
+
+.team-info > span {
+  color: #087f8c;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.team-info h3 {
+  margin: 8px 0;
+  font-family: Georgia, serif;
+  font-size: 1.42rem;
+}
+
+.team-info p {
+  color: #5c6f7c;
+  font-size: 0.9rem;
+}
+
+/* the registration number line */
+.team-info .reg-number {
+  color: #165d8d;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* the teal strip before the footer on home page */
+.cta-band {
+  padding: 60px 0;
+  color: #ffffff;
+  background-color: #087f8c;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.cta-band .eyebrow,
+.cta-band h2 {
+  color: #ffffff;
+}
+
+.cta-band h2 {
+  margin-bottom: 0;
+}
+
+/* ============ blue header used on the other pages ============ */
+
+.page-hero {
+  padding: 85px 0;
+  color: #ffffff;
+  background-color: #073b66;
+  text-align: center;
+}
+
+.page-hero .container {
+  max-width: 850px;
+}
+
+.page-hero h1 {
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-size: 4.5rem;
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #c9edf3;
+  font-size: 1.1rem;
+}
+
+.page-hero .eyebrow {
+  color: #14b8a6;
+}
+
+/* ============ services page ============ */
+
+.services-section {
+  background-color: #f8fbfc;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px;
+  border: 1px solid #d8e5ea;
+  border-radius: 18px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 26px rgba(5, 43, 74, 0.06);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #14b8a6;
+}
+
+.service-card .service-icon {
+  margin-bottom: 55px;
+}
+
+.service-card h2 {
+  font-size: 1.55rem;
+}
+
+.service-card p {
+  color: #5c6f7c;
+}
+
+.service-card strong {
+  color: #087f8c;
+  font-size: 0.88rem;
+}
+
+/* the dark blue 3 steps part */
+.section-dark {
+  color: #ffffff;
+  background-color: #052b4a;
+}
+
+.section-heading.light h2,
+.section-heading.light p {
+  color: #ffffff;
+}
+
+.section-heading.light .eyebrow {
+  color: #14b8a6;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin: 0 0 45px;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  position: relative;
+  padding: 30px 25px 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* the big 1 2 3 numbers */
+.steps li > span {
+  display: block;
+  margin-bottom: 30px;
+  color: #14b8a6;
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+}
+
+.steps h3 {
+  color: #ffffff;
+  font-size: 1.18rem;
+}
+
+.steps p {
+  color: #c9edf3;
+}
+
+.center-action {
+  text-align: center;
+}
+
+/* ============ contacts page ============ */
+
+.contact-section {
+  background-color: #f8fbfc;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 65px;
+  align-items: start;
+}
+
+.contact-details > p {
+  color: #5c6f7c;
+}
+
+.contact-details dl {
+  margin-top: 40px;
+}
+
+.contact-details dl div {
+  padding: 20px 0;
+  border-top: 1px solid #d8e5ea;
+}
+
+.contact-details dt {
+  color: #087f8c;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-details dd {
+  margin: 5px 0 0;
+  color: #142c3d;
+  font-weight: 700;
+}
+
+.contact-details a:hover {
+  color: #087f8c;
+}
+
+/* the white box with the form */
+.contact-form {
+  padding: 40px;
+  border: 1px solid #d8e5ea;
+  border-radius: 18px;
+  background-color: #ffffff;
+  box-shadow: 0 18px 45px rgba(5, 43, 74, 0.1);
+}
+
+.contact-form > h2 {
+  margin-bottom: 8px;
+  font-size: 2.1rem;
+}
+
+.contact-form > p {
+  color: #5c6f7c;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* makes a field take the whole row */
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  color: #073b66;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid #d8e5ea;
+  border-radius: 8px;
+  padding: 13px 14px;
+  color: #142c3d;
+  background-color: #ffffff;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* so people using keyboards can see where they are */
+input:focus, select:focus, textarea:focus {
+  outline: 3px solid #c9edf3;
+  border-color: #087f8c;
+}
+
+/* the map area (we will replace it with a real map later) */
+.map-section {
+  padding-top: 75px;
+}
+
+.map-placeholder {
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d8e5ea;
+  border-radius: 18px;
+  background: repeating-linear-gradient(45deg, #e8f7fb, #e8f7fb 18px, #ffffff 18px, #ffffff 36px);
+  text-align: center;
+}
+
+.map-pin {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+  border-radius: 50% 50% 50% 0;
+  color: #ffffff;
+  background-color: #087f8c;
+  font-size: 1.2rem;
+  transform: rotate(-45deg);
+}
+
+.map-placeholder strong {
+  color: #073b66;
+  font-size: 1.2rem;
+}
+
+.map-placeholder p {
+  margin: 5px 20px 0;
+  color: #5c6f7c;
+}
+
+/* ============ footer ============ */
+
+.site-footer {
+  padding-top: 70px;
+  color: #c9edf3;
+  background-color: #052b4a;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.6fr 1fr;
+  gap: 70px;
+  padding-bottom: 50px;
+}
+
+.footer-grid > div:first-child p {
+  max-width: 330px;
+  margin-top: 20px;
+}
+
+.footer-brand {
+  color: #ffffff;
+}
+
+.footer-brand small {
+  color: #14b8a6;
+}
+
+.footer-grid h3 {
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.footer-grid a:not(.brand) {
+  display: block;
+  width: max-content;
+  margin: 7px 0;
+}
+
+.footer-grid a:not(.brand):hover {
+  color: #ffffff;
+}
+
+.footer-grid p {
+  margin-bottom: 8px;
+}
+
+.copyright {
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c9edf3;
+  font-size: 0.83rem;
+  text-align: center;
+}
+
+.copyright p {
+  margin: 0;
+}
+
+/* ============ for tablets ============ */
+
+@media (max-width: 960px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-grid, .two-column, .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .hero-image {
+    max-width: 700px;
+  }
+
+  .hero-image img {
+    min-height: 420px;
+  }
+
+  .benefit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid, .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .steps li {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.2fr 0.7fr 1fr;
+    gap: 35px;
+  }
+}
+
+/* ============ for phones ============ */
+
+@media (max-width: 680px) {
+  .container {
+    width: min(100% - 28px, 1160px);
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .page-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .nav-wrap {
+    min-height: 72px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-links {
+    gap: 2px;
+  }
+
+  .nav-links a {
+    padding: 8px 12px;
+    font-size: 0.88rem;
+  }
+
+  .hero {
+    padding: 55px 0 65px;
+  }
+
+  .hero-grid {
+    gap: 42px;
+  }
+
+  .hero-image img {
+    min-height: 330px;
+    border-radius: 90px 14px 90px 14px;
+  }
+
+  .hero-badge {
+    right: 6px;
+    bottom: 20px;
+    width: 105px;
+    height: 105px;
+    border-width: 6px;
+  }
+
+  .button-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .benefit-grid, .team-grid, .service-grid, .form-grid, .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit {
+    min-height: auto;
+  }
+
+  .benefit .icon {
+    margin-bottom: 25px;
+  }
+
+  .team-grid, .service-grid {
+    gap: 20px;
+  }
+
+  .service-card {
+    min-height: 300px;
+  }
+
+  .cta-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-hero {
+    padding: 65px 0;
+  }
+
+  .contact-form {
+    padding: 25px 20px;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .footer-grid {
+    gap: 32px;
+  }
+}
